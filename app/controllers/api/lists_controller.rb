@@ -12,7 +12,7 @@ class Api::ListsController < ApplicationController
 
   def create
 
-    @list = LIst.new(list_params)
+    @list = List.new(list_params)
     if @list.save
       render json: @list
     else
@@ -46,5 +46,6 @@ class Api::ListsController < ApplicationController
 
     def set_list
       @list = List.find(params[:id])
+    end
 
 end
