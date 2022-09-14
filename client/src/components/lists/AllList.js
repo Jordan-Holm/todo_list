@@ -1,6 +1,6 @@
 import ListShow from './ListShow';
 
-const AllList = ({ lists, updateList }) => (
+const AllList = ({ lists, updateList, deleteList }) => (
     <>
         {
             lists.map( l => 
@@ -8,6 +8,7 @@ const AllList = ({ lists, updateList }) => (
                     key={l.id}
                     {...l}
                     updateList={updateList}
+                    deleteList={deleteList}
                 />    
             )
         }

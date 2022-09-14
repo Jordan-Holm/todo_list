@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ListForm from './ListForm';
 
-const ListShow = ({ id, title, desc, updateList }) => {
+const ListShow = ({ id, title, desc, updateList, deleteList }) => {
   const [editing, setEdit] = useState(false)
 
   return (
@@ -21,12 +21,14 @@ const ListShow = ({ id, title, desc, updateList }) => {
         </>
         :
         <div>
-          <h1> {title} {desc}</h1>
-          <button onClick={() => setEdit(true)}>
-            Edit
-          </button>
-          <button>Delete</button>
-          <button>Todos</button>
+            <h1> {title} {desc}</h1>
+            <button onClick={() => setEdit(true)}>
+                Edit
+            </button>
+            <button onClick={() => deleteList(id)}>
+                Delete
+            </button>
+            <button>Todos</button>
         </div>
       }
       <hr />
